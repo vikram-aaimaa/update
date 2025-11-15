@@ -4,7 +4,7 @@ import formidable from 'formidable'
 import FormData from 'form-data'
 import fs from 'fs'
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:8000'
+const BACKEND_URL = process.env.BACKEND_URL || 'https://boganto.com'
 
 export default async function handler(req, res) {
   try {

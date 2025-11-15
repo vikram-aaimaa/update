@@ -325,13 +325,3 @@ INSERT INTO admins (username, email, password, name, role) VALUES
 ('admin123', 'admin123@boganto.com', 'secure@123', 'Primary Administrator', 'superadmin'),
 ('admin', 'admin@boganto.com', 'admin_123', 'Administrator', 'admin'),
 ('boganto_admin', 'boganto@boganto.com', 'boganto_123', 'Boganto Administrator', 'admin');
-
--- ============================================
--- 12. FINAL COMMIT
--- ============================================
-
-COMMIT;
-
--- Database schema setup complete
--- All Unsplash URLs have been replaced with local upload paths
--- Schema is consolidated and production-ready

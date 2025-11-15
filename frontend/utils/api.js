@@ -1,12 +1,7 @@
 import axios from 'axios'
 
 // API base URL with fallback
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
-
-// Log the API base URL in development
-if (process.env.NODE_ENV !== 'production') {
-  console.log('Using API base URL:', API_BASE_URL)
-}
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://boganto.com';
 
 // Create axios instance
 const api = axios.create({

@@ -1,7 +1,7 @@
 // API proxy for blog by ID
 import axios from 'axios'
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:8000'
+const BACKEND_URL = process.env.BACKEND_URL || 'https://boganto.com'
 
 export default async function handler(req, res) {
   const { id } = req.query

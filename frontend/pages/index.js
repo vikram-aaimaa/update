@@ -624,26 +624,10 @@ const HomePage = ({ initialData, banners: initialBanners }) => {
 // Use SSR to fetch initial data
 export async function getServerSideProps(context) {
   try {
-    // For sandbox environment, let client-side handle data fetching to avoid URL issues
-    const isE2BSandbox = context.req.headers.host && context.req.headers.host.includes('e2b.dev');
-    
-    if (isE2BSandbox) {
-      // Return empty data for sandbox - client will fetch with proper URLs
-      return {
-        props: {
-          initialData: {
-            blogs: [],
-            featuredBlogs: [],
-            latestBlogs: [],
-            popularBlogs: [],
-          },
-          banners: [],
-        },
-      };
-    }
+
     
     // For local development, fetch data normally
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://boganto.com';
     
     const [blogsRes, featuredRes, bannersRes] = await Promise.all([
       fetch(`${baseUrl}/api/blogs`).catch(() => ({ ok: false })),

@@ -53,7 +53,7 @@ const Sidebar = () => {
 
   const SidebarBlogItem = ({ blog, isPopular = false }) => {
     const getImageUrl = (img) =>
-      img ? `http://localhost:8000/uploads/${img.replace(/^.*[\\/]/, '')}` : ''
+      img ? `https://boganto.com/uploads/${img.replace(/^.*[\\/]/, '')}` : ''
     return (
       <div className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
         <div className="flex-shrink-0">

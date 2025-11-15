@@ -4,7 +4,7 @@ class DatabaseConfig {
     private $host = 'localhost';
     private $db_name = 'boganto_blog';
     private $username = 'root';
-    private $password = 'Vj2004@jangid';
+    private $password = '';
     public $conn;
 
     public function getConnection() {
@@ -30,10 +30,7 @@ $allowed_origins = [
 ];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
-// For e2b.dev sandbox, allow the frontend URL
-if (strpos($origin, 'e2b.dev') !== false && strpos($origin, '5173-') !== false) {
-    header("Access-Control-Allow-Origin: $origin");
-} elseif (in_array($origin, $allowed_origins)) {
+if (in_array($origin, $allowed_origins)) {
     header("Access-Control-Allow-Origin: $origin");
 } else {
     header("Access-Control-Allow-Origin: http://localhost:5173");
@@ -127,11 +124,7 @@ function getFullImageUrl($imagePath) {
     }
     
     // Determine the appropriate base URL
-    $baseUrl = 'http://localhost:8000';
-    if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'e2b.dev') !== false) {
-        // In e2b.dev sandbox, always use HTTPS for external URLs
-        $baseUrl = 'https://' . $_SERVER['HTTP_HOST'];
-    }
+    $baseUrl = 'https://boganto.com';
     
     // If it's a relative path to uploads, convert to full URL
     if (strpos($imagePath, '/uploads/') === 0) {

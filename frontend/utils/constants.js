@@ -7,4 +7,4 @@ export const DEFAULT_IMAGES = {
   BUILDING_LIBRARY: '/uploads/1758779936_a-book-1760998_1280.jpg'
 };
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://boganto.com';
